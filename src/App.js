@@ -13,12 +13,15 @@ import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import About from './pages/About';
 import Contact from './pages/Contact';
+import LayoutSingle from './LayoutSingle';
 import SingleProduct from './pages/SingleProduct';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {DataProvider} from './context/DataContext'
 
 function App() {
   return (
     <div className="App">
+      <DataProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LayoutII/>}>
@@ -45,7 +48,7 @@ function App() {
           <Route path="/contact" element={<Layout/>}>
             <Route index element={<Contact />}/>
           </Route>
-          <Route path="/singleProduct" element={<Layout/>}>
+          <Route path="/singleProduct/:id" element={<LayoutSingle/>}>
             <Route index element={<SingleProduct />}/>
           </Route>
           <Route path="/forgotPassword" element={<ForgotPassword />}/>
@@ -55,6 +58,7 @@ function App() {
           <Route path="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
+      </DataProvider>
     </div>
   );
 }

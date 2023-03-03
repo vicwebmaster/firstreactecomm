@@ -3,7 +3,7 @@ import PagesItem from './PagesItem'
 import HeaderAction from './HeaderAction'
 import {Link} from 'react-router-dom';
 
-const Header = () => {
+const HeaderSingle = () => {
   return (
     <>
     <header className="header axil-header header-style-2">
@@ -23,10 +23,10 @@ const Header = () => {
                     <div className="col-lg-2 col-sm-3 col-5">
                         <div className="header-brand">
                             <p className="logo logo-dark">
-                                <img src="assets/images/logo/logo.png" alt="Site Logo" />
+                                <img src="../assets/images/logo/logo.png" alt="Site Logo" />
                             </p>
                             <p className="logo logo-light">
-                                <img src="assets/images/logo/logo-light.png" alt="Site Logo" />
+                                <img src="../assets/images/logo/logo-light.png" alt="Site Logo" />
                             </p>
                         </div>
                     </div>
@@ -55,7 +55,7 @@ const Header = () => {
                             <button className="mobile-close-btn mobile-nav-toggler"><i className="fas fa-times"></i></button>
                             <div className="mobile-nav-brand">
                                 <p className="logo">
-                                    <img src="assets/images/logo/logo.png" alt="Site Logo" />
+                                    <img src="../assets/images/logo/logo.png" alt="Site Logo" />
                                 </p>
                             </div>
                             <ul className="mainmenu">
@@ -84,4 +84,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default HeaderSingle

@@ -5,23 +5,23 @@ import {Link} from 'react-router-dom';
 const Shop = () => {
   return (
     <>
-        <main class="main-wrapper">
-        <div class="axil-breadcrumb-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="inner">
-                            <ul class="axil-breadcrumb">
-                                <li class="axil-breadcrumb-item"><Link to="/">Home</Link></li>
-                                <li class="separator"></li>
-                                <li class="axil-breadcrumb-item active" aria-current="page">My Account</li>
+        <main className="main-wrapper">
+        <div className="axil-breadcrumb-area">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-6 col-md-8">
+                        <div className="inner">
+                            <ul className="axil-breadcrumb">
+                                <li className="axil-breadcrumb-item"><Link to="/">Home</Link></li>
+                                <li className="separator"></li>
+                                <li className="axil-breadcrumb-item active" aria-current="page">My Account</li>
                             </ul>
-                            <h1 class="title">Explore All Products</h1>
+                            <h1 className="title">Explore All Products</h1>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-4">
-                        <div class="inner">
-                            <div class="bradcrumb-thumb">
+                    <div className="col-lg-6 col-md-4">
+                        <div className="inner">
+                            <div className="bradcrumb-thumb">
                                 <img src="../assets/images/product/product-45.png" alt="Image" />
                             </div>
                         </div>
@@ -30,17 +30,17 @@ const Shop = () => {
             </div>
         </div>
         
-        <div class="axil-shop-area axil-section-gap bg-color-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="axil-shop-top">
-                            <div class="row">
-                                <div class="col-lg-9">
-                                    <div class="category-select">
+        <div className="axil-shop-area axil-section-gap bg-color-white">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="axil-shop-top">
+                            <div className="row">
+                                <div className="col-lg-9">
+                                    <div className="category-select">
 
 
-                                        <select class="single-select">
+                                        <select className="single-select">
                                             <option>Categories</option>
                                             <option>Fashion</option>
                                             <option>Electronics</option>
@@ -48,7 +48,7 @@ const Shop = () => {
                                             <option>Beauty</option>
                                         </select>
                                         
-                                        <select class="single-select">
+                                        <select className="single-select">
                                             <option>Color</option>
                                             <option>Red</option>
                                             <option>Blue</option>
@@ -56,7 +56,7 @@ const Shop = () => {
                                             <option>Pink</option>
                                         </select>
                                         
-                                        <select class="single-select">
+                                        <select className="single-select">
                                             <option>Price Range</option>
                                             <option>0 - 100</option>
                                             <option>100 - 500</option>
@@ -66,9 +66,9 @@ const Shop = () => {
 
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div class="category-select mt_md--10 mt_sm--10 justify-content-lg-end">
-                                        <select class="single-select">
+                                <div className="col-lg-3">
+                                    <div className="category-select mt_md--10 mt_sm--10 justify-content-lg-end">
+                                        <select className="single-select">
                                             <option>Sort by Latest</option>
                                             <option>Sort by Name</option>
                                             <option>Sort by Price</option>
@@ -80,38 +80,38 @@ const Shop = () => {
                         </div>
                     </div>
                 </div>
-                <div class="row row--15">
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="axil-product product-style-one has-color-pick mt--40">
-                            <div class="thumbnail">
+                <div className="row row--15">
+                    <div className="col-xl-3 col-lg-4 col-sm-6">
+                        <div className="axil-product product-style-one has-color-pick mt--40">
+                            <div className="thumbnail">
                                 <a href="single-product.html">
                                     <img src="assets/images/product/electric/product-01.png" alt="Product Images" />
                                 </a>
-                                <div class="label-block label-right">
-                                    <div class="product-badget">20% OFF</div>
+                                <div className="label-block label-right">
+                                    <div className="product-badget">20% OFF</div>
                                 </div>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href="wishlist.html"><i class="far fa-heart"></i></a></li>
-                                        <li class="select-option"><a href="cart.html">Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye"></i></a></li>
+                                <div className="product-hover-action">
+                                    <ul className="cart-action">
+                                        <li className="wishlist"><a href="wishlist.html"><i className="far fa-heart"></i></a></li>
+                                        <li className="select-option"><a href="cart.html">Add to Cart</a></li>
+                                        <li className="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i className="far fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href="single-product.html">3D™ wireless headset</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$30</span>
-                                        <span class="price old-price">$30</span>
+                            <div className="product-content">
+                                <div className="inner">
+                                    <h5 className="title"><a href="single-product.html">3D™ wireless headset</a></h5>
+                                    <div className="product-price-variant">
+                                        <span className="price current-price">$30</span>
+                                        <span className="price old-price">$30</span>
                                     </div>
-                                    <div class="color-variant-wrapper">
-                                        <ul class="color-variant">
-                                            <li class="color-extra-01 active"><span><span class="color"></span></span>
+                                    <div className="color-variant-wrapper">
+                                        <ul className="color-variant">
+                                            <li className="color-extra-01 active"><span><span className="color"></span></span>
                                             </li>
-                                            <li class="color-extra-02"><span><span class="color"></span></span>
+                                            <li className="color-extra-02"><span><span className="color"></span></span>
                                             </li>
-                                            <li class="color-extra-03"><span><span class="color"></span></span>
+                                            <li className="color-extra-03"><span><span className="color"></span></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -120,34 +120,34 @@ const Shop = () => {
                         </div>
                     </div>
                     
-                    <div class="col-xl-3 col-lg-4 col-sm-6">
-                        <div class="axil-product product-style-one has-color-pick mt--40">
-                            <div class="thumbnail">
+                    <div className="col-xl-3 col-lg-4 col-sm-6">
+                        <div className="axil-product product-style-one has-color-pick mt--40">
+                            <div className="thumbnail">
                                 <a href="single-product.html">
                                     <img src="assets/images/product/electric/product-02.png" alt="Product Images" />
                                 </a>
-                                <div class="product-hover-action">
-                                    <ul class="cart-action">
-                                        <li class="wishlist"><a href="wishlist.html"><i class="far fa-heart"></i></a></li>
-                                        <li class="select-option"><a href="cart.html">Add to Cart</a></li>
-                                        <li class="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i class="far fa-eye"></i></a></li>
+                                <div className="product-hover-action">
+                                    <ul className="cart-action">
+                                        <li className="wishlist"><a href="wishlist.html"><i className="far fa-heart"></i></a></li>
+                                        <li className="select-option"><a href="cart.html">Add to Cart</a></li>
+                                        <li className="quickview"><a href="#" data-bs-toggle="modal" data-bs-target="#quick-view-modal"><i className="far fa-eye"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="product-content">
-                                <div class="inner">
-                                    <h5 class="title"><a href="single-product.html">Media remote</a></h5>
-                                    <div class="product-price-variant">
-                                        <span class="price current-price">$40</span>
-                                        <span class="price old-price">$50</span>
+                            <div className="product-content">
+                                <div className="inner">
+                                    <h5 className="title"><a href="single-product.html">Media remote</a></h5>
+                                    <div className="product-price-variant">
+                                        <span className="price current-price">$40</span>
+                                        <span className="price old-price">$50</span>
                                     </div>
-                                    <div class="color-variant-wrapper">
-                                        <ul class="color-variant">
-                                            <li class="color-extra-01 active"><span><span class="color"></span></span>
+                                    <div className="color-variant-wrapper">
+                                        <ul className="color-variant">
+                                            <li className="color-extra-01 active"><span><span className="color"></span></span>
                                             </li>
-                                            <li class="color-extra-02"><span><span class="color"></span></span>
+                                            <li className="color-extra-02"><span><span className="color"></span></span>
                                             </li>
-                                            <li class="color-extra-03"><span><span class="color"></span></span>
+                                            <li className="color-extra-03"><span><span className="color"></span></span>
                                             </li>
                                         </ul>
                                     </div>
@@ -157,24 +157,24 @@ const Shop = () => {
                     </div>
                     
                 </div>
-                <div class="text-center pt--30">
-                    <a href="#" class="axil-btn btn-bg-lighter btn-load-more">Load more</a>
+                <div className="text-center pt--30">
+                    <a href="#" className="axil-btn btn-bg-lighter btn-load-more">Load more</a>
                 </div>
             </div>
             
         </div>
         
-        <div class="axil-newsletter-area axil-section-gap pt--0">
-            <div class="container">
-                <div class="etrade-newsletter-wrapper bg_image bg_image--5">
-                    <div class="newsletter-content">
-                        <span class="title-highlighter highlighter-primary2"><i class="fas fa-envelope-open"></i>Newsletter</span>
-                        <h2 class="title mb--40 mb_sm--30">Get weekly update</h2>
-                        <div class="input-group newsletter-form">
-                            <div class="position-relative newsletter-inner mb--15">
+        <div className="axil-newsletter-area axil-section-gap pt--0">
+            <div className="container">
+                <div className="etrade-newsletter-wrapper bg_image bg_image--5">
+                    <div className="newsletter-content">
+                        <span className="title-highlighter highlighter-primary2"><i className="fas fa-envelope-open"></i>Newsletter</span>
+                        <h2 className="title mb--40 mb_sm--30">Get weekly update</h2>
+                        <div className="input-group newsletter-form">
+                            <div className="position-relative newsletter-inner mb--15">
                                 <input placeholder="example@gmail.com" type="text"/>
                             </div>
-                            <button type="submit" class="axil-btn mb--15">Subscribe</button>
+                            <button type="submit" className="axil-btn mb--15">Subscribe</button>
                         </div>
                     </div>
                 </div>

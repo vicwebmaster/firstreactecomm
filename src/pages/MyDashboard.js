@@ -1,28 +1,47 @@
-import React from 'react'
+import React, {useContext, useEffect} from 'react'
 import {Link} from 'react-router-dom';
+import DataContext from '../context/DataContext';
 
 const MyDashboard = () => {
+
+    const {logged, checkLogged, setLogged} = useContext(DataContext);
+
+    useEffect(()=>{
+        const log = JSON.parse(localStorage.getItem('logged'));
+        setLogged(log)
+    },[setLogged])
+
     const showDiv = (div) => {
         alert(div)
     }
+
+    const logout = () => {
+        localStorage.removeItem('logged')
+        window.location.replace("/")
+    }
+
+    const x = checkLogged();
   return (
-    <main class="main-wrapper">
-        <div class="axil-breadcrumb-area">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-8">
-                        <div class="inner">
-                            <ul class="axil-breadcrumb">
-                                <li class="axil-breadcrumb-item"><Link to="/">Home</Link></li>
-                                <li class="separator"></li>
-                                <li class="axil-breadcrumb-item active" aria-current="page">My Account</li>
+    <>
+    {x ? (
+    <main className="main-wrapper">
+   
+        <div className="axil-breadcrumb-area">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-6 col-md-8">
+                        <div className="inner">
+                            <ul className="axil-breadcrumb">
+                                <li className="axil-breadcrumb-item"><Link to="/">Home</Link></li>
+                                <li className="separator"></li>
+                                <li className="axil-breadcrumb-item active" aria-current="page">My Account</li>
                             </ul>
-                            <h1 class="title">Explore All Products</h1>
+                            <h1 className="title">Explore All Products</h1>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-4">
-                        <div class="inner">
-                            <div class="bradcrumb-thumb">
+                    <div className="col-lg-6 col-md-4">
+                        <div className="inner">
+                            <div className="bradcrumb-thumb">
                                 <img src="assets/images/product/product-45.png" alt=""/>
                             </div>
                         </div>
@@ -31,47 +50,47 @@ const MyDashboard = () => {
             </div>
         </div>
         
-        <div class="axil-dashboard-area axil-section-gap">
-            <div class="container">
-                <div class="axil-dashboard-warp">
-                    <div class="axil-dashboard-author">
-                        <div class="media">
-                            <div class="thumbnail">
+        <div className="axil-dashboard-area axil-section-gap">
+            <div className="container">
+                <div className="axil-dashboard-warp">
+                    <div className="axil-dashboard-author">
+                        <div className="media">
+                            <div className="thumbnail">
                                 <img src="assets/images/product/author1.png" alt="Hello Annie"/>
                             </div>
-                            <div class="media-body">
-                                <h5 class="title mb-0">Hello Annie</h5>
-                                <span class="joining-date">eTrade Member Since Sep 2020</span>
+                            <div className="media-body">
+                                <h5 className="title mb-0">Hello {logged[0].username}</h5>
+                                <span className="joining-date">{logged[0].email}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-4">
-                            <aside class="axil-dashboard-aside">
-                                <nav class="axil-dashboard-nav">
-                                    <div class="nav nav-tabs" role="tablist">
-                                        <p class="nav-item nav-link active" style={{cursor:'pointer'}} onClick={()=>showDiv('nav-dashboard')}><i class="fas fa-th-large"></i>Dashboard</p>
-                                        <p class="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-orders')}><i class="fas fa-shopping-basket"></i>Orders</p>
-                                        <p class="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-downloads')} ><i class="fas fa-file-download"></i>Downloads</p>
-                                        <p class="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-address')} ><i class="fas fa-home"></i>Addresses</p>
-                                        <p class="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-account')}><i class="fas fa-user"></i>Account Details</p>
-                                        <Link class="nav-item nav-link" to="/login"><i class="fal fa-sign-out"></i>Logout</Link>
+                    <div className="row">
+                        <div className="col-xl-3 col-md-4">
+                            <aside className="axil-dashboard-aside">
+                                <nav className="axil-dashboard-nav">
+                                    <div className="nav nav-tabs" role="tablist">
+                                        <p className="nav-item nav-link active" style={{cursor:'pointer'}} onClick={()=>showDiv('nav-dashboard')}><i className="fas fa-th-large"></i>Dashboard</p>
+                                        <p className="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-orders')}><i className="fas fa-shopping-basket"></i>Orders</p>
+                                        <p className="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-downloads')} ><i className="fas fa-file-download"></i>Downloads</p>
+                                        <p className="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-address')} ><i className="fas fa-home"></i>Addresses</p>
+                                        <p className="nav-item nav-link"  style={{cursor:'pointer'}} onClick={()=>showDiv('nav-account')}><i className="fas fa-user"></i>Account Details</p>
+                                        <Link className="nav-item nav-link"  onClick={()=>logout()}><i className="fal fa-sign-out"></i>Logout</Link>
                                     </div>
                                 </nav>
                             </aside>
                         </div>
-                        <div class="col-xl-9 col-md-8">
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="nav-dashboard" role="tabpanel">
-                                    <div class="axil-dashboard-overview">
-                                        <div class="welcome-text">Hello Annie (not <span>Annie?</span> <Link to="/login">Log Out</Link>)</div>
+                        <div className="col-xl-9 col-md-8">
+                            <div className="tab-content">
+                                <div className="tab-pane fade show active" id="nav-dashboard" role="tabpanel">
+                                    <div className="axil-dashboard-overview">
+                                        <div className="welcome-text">Hello {logged[0].username} (not <span>{logged[0].username}?</span> <Link onClick={()=>logout()}>Log Out</Link>)</div>
                                         <p>From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.</p>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-orders" role="tabpanel">
-                                    <div class="axil-dashboard-order">
-                                        <div class="table-responsive">
-                                            <table class="table">
+                                <div className="tab-pane fade" id="nav-orders" role="tabpanel">
+                                    <div className="axil-dashboard-order">
+                                        <div className="table-responsive">
+                                            <table className="table">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col">Order</th>
@@ -87,14 +106,14 @@ const MyDashboard = () => {
                                                         <td>September 10, 2020</td>
                                                         <td>Processing</td>
                                                         <td>$326.63 for 3 items</td>
-                                                        <td><button class="axil-btn view-btn">View</button></td>
+                                                        <td><button className="axil-btn view-btn">View</button></td>
                                                     </tr>
                                                     <tr>
                                                         <th scope="row">#6523</th>
                                                         <td>September 10, 2020</td>
                                                         <td>On Hold</td>
                                                         <td>$326.63 for 3 items</td>
-                                                        <td><button class="axil-btn view-btn">View</button></td>
+                                                        <td><button className="axil-btn view-btn">View</button></td>
                                                     </tr>
                                                     
                                                 </tbody>
@@ -102,41 +121,41 @@ const MyDashboard = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-downloads" role="tabpanel">
-                                    <div class="axil-dashboard-order">
+                                <div className="tab-pane fade" id="nav-downloads" role="tabpanel">
+                                    <div className="axil-dashboard-order">
                                         <p>You don't have any download</p>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-address" role="tabpanel">
-                                    <div class="axil-dashboard-address">
-                                        <p class="notice-text">The following addresses will be used on the checkout page by default.</p>
-                                        <div class="row row--30">
-                                            <div class="col-lg-6">
-                                                <div class="address-info mb--40">
-                                                    <div class="addrss-header d-flex align-items-center justify-content-between">
-                                                        <h4 class="title mb-0">Shipping Address</h4>
-                                                        <p class="address-edit"><i class="far fa-edit"></i></p>
+                                <div className="tab-pane fade" id="nav-address" role="tabpanel">
+                                    <div className="axil-dashboard-address">
+                                        <p className="notice-text">The following addresses will be used on the checkout page by default.</p>
+                                        <div className="row row--30">
+                                            <div className="col-lg-6">
+                                                <div className="address-info mb--40">
+                                                    <div className="addrss-header d-flex align-items-center justify-content-between">
+                                                        <h4 className="title mb-0">Shipping Address</h4>
+                                                        <p className="address-edit"><i className="far fa-edit"></i></p>
                                                     </div>
-                                                    <ul class="address-details">
+                                                    <ul className="address-details">
                                                         <li>Name: Annie Mario</li>
                                                         <li>Email: annie@example.com</li>
                                                         <li>Phone: 1234 567890</li>
-                                                        <li class="mt--30">7398 Smoke Ranch Road 
+                                                        <li className="mt--30">7398 Smoke Ranch Road 
                                                         Las Vegas, Nevada 89128</li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <div class="address-info">
-                                                    <div class="addrss-header d-flex align-items-center justify-content-between">
-                                                        <h4 class="title mb-0">Billing Address</h4>
-                                                        <p class="address-edit"><i class="far fa-edit"></i></p>
+                                            <div className="col-lg-6">
+                                                <div className="address-info">
+                                                    <div className="addrss-header d-flex align-items-center justify-content-between">
+                                                        <h4 className="title mb-0">Billing Address</h4>
+                                                        <p className="address-edit"><i className="far fa-edit"></i></p>
                                                     </div>
-                                                    <ul class="address-details">
+                                                    <ul className="address-details">
                                                         <li>Name: Annie Mario</li>
                                                         <li>Email: annie@example.com</li>
                                                         <li>Phone: 1234 567890</li>
-                                                        <li class="mt--30">7398 Smoke Ranch Road
+                                                        <li className="mt--30">7398 Smoke Ranch Road
                                                         Las Vegas, Nevada 89128</li>
                                                     </ul>
                                                 </div>
@@ -144,51 +163,51 @@ const MyDashboard = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="nav-account" role="tabpanel">
-                                    <div class="col-lg-9">
-                                        <div class="axil-dashboard-account">
-                                            <form class="account-details-form">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
+                                <div className="tab-pane fade" id="nav-account" role="tabpanel">
+                                    <div className="col-lg-9">
+                                        <div className="axil-dashboard-account">
+                                            <form className="account-details-form">
+                                                <div className="row">
+                                                    <div className="col-lg-6">
+                                                        <div className="form-group">
                                                             <label>First Name</label>
-                                                            <input type="text" class="form-control" value="Annie"/>
+                                                            <input type="text" className="form-control" value="Annie"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="form-group">
+                                                    <div className="col-lg-6">
+                                                        <div className="form-group">
                                                             <label>Last Name</label>
-                                                            <input type="text" class="form-control" value="Mario"/>
+                                                            <input type="text" className="form-control" value="Mario"/>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="form-group mb--40">
+                                                    <div className="col-12">
+                                                        <div className="form-group mb--40">
                                                             <label>Country/ Region</label>
-                                                            <select class="select2">
+                                                            <select className="select2">
                                                                 <option value="1">United Kindom (UK)</option>
                                                                 <option value="1">United States (USA)</option>
                                                                 <option value="1">United Arab Emirates (UAE)</option>
                                                                 <option value="1">Australia</option>
                                                             </select>
-                                                            <p class="b3 mt--10">This will be how your name will be displayed in the account section and in reviews</p>
+                                                            <p className="b3 mt--10">This will be how your name will be displayed in the account section and in reviews</p>
                                                         </div>
                                                     </div>
-                                                    <div class="col-12">
-                                                        <h5 class="title">Password Change</h5>
-                                                        <div class="form-group">
+                                                    <div className="col-12">
+                                                        <h5 className="title">Password Change</h5>
+                                                        <div className="form-group">
                                                             <label>Password</label>
-                                                            <input type="password" class="form-control" value="123456789101112131415"/>
+                                                            <input type="password" className="form-control" value="123456789101112131415"/>
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div className="form-group">
                                                             <label>New Password</label>
-                                                            <input type="password" class="form-control"/>
+                                                            <input type="password" className="form-control"/>
                                                         </div>
-                                                        <div class="form-group">
+                                                        <div className="form-group">
                                                             <label>Confirm New Password</label>
-                                                            <input type="password" class="form-control"/>
+                                                            <input type="password" className="form-control"/>
                                                         </div>
-                                                        <div class="form-group mb--0">
-                                                            <input type="submit" class="axil-btn" value="Save Changes"/>
+                                                        <div className="form-group mb--0">
+                                                            <input type="submit" className="axil-btn" value="Save Changes"/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -203,17 +222,17 @@ const MyDashboard = () => {
             </div>
         </div>
         
-        <div class="axil-newsletter-area axil-section-gap pt--0">
-            <div class="container">
-                <div class="etrade-newsletter-wrapper bg_image bg_image--5">
-                    <div class="newsletter-content">
-                        <span class="title-highlighter highlighter-primary2"><i class="fas fa-envelope-open"></i>Newsletter</span>
-                        <h2 class="title mb--40 mb_sm--30">Get weekly update</h2>
-                        <div class="input-group newsletter-form">
-                            <div class="position-relative newsletter-inner mb--15">
+        <div className="axil-newsletter-area axil-section-gap pt--0">
+            <div className="container">
+                <div className="etrade-newsletter-wrapper bg_image bg_image--5">
+                    <div className="newsletter-content">
+                        <span className="title-highlighter highlighter-primary2"><i className="fas fa-envelope-open"></i>Newsletter</span>
+                        <h2 className="title mb--40 mb_sm--30">Get weekly update</h2>
+                        <div className="input-group newsletter-form">
+                            <div className="position-relative newsletter-inner mb--15">
                                 <input placeholder="example@gmail.com" type="text"/>
                             </div>
-                            <button type="submit" class="axil-btn mb--15">Subscribe</button>
+                            <button type="submit" className="axil-btn mb--15">Subscribe</button>
                         </div>
                     </div>
                 </div>
@@ -222,6 +241,11 @@ const MyDashboard = () => {
         </div>
         
     </main>
+    ) : 
+        <div className="bg-danger text-white">You're not Permitted to View the Resources of this page</div>
+    }
+
+</>
   )
 }
 

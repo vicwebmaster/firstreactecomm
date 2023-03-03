@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Footer = () => {
+const FooterSingle = () => {
   return (
     <footer className="axil-footer-area footer-style-2">
       
@@ -14,7 +14,7 @@ const Footer = () => {
                             <h5 className="widget-title">Support</h5>
                             <div className="logo mb--30">
                               <p>
-                                  <img className="light-logo" src="assets/images/logo/logo.png" alt="Logo Images" />
+                                  <img className="light-logo" src="../assets/images/logo/logo.png" alt="Logo Images" />
                               </p>
                             </div>
                             <div className="inner">
@@ -67,14 +67,14 @@ const Footer = () => {
                                 <span>Save $3 With App & New User only</span>
                                 <div className="download-btn-group">
                                     <div className="qr-code">
-                                        <img src="assets/images/others/qr.png" alt="Axilthemes" />
+                                        <img src="../assets/images/others/qr.png" alt="Axilthemes" />
                                     </div>
                                     <div className="app-link">
                                         <p>
-                                            <img src="assets/images/others/app-store.png" alt="App Store" />
+                                            <img src="../assets/images/others/app-store.png" alt="App Store" />
                                         </p>
                                         <p>
-                                            <img src="assets/images/others/play-store.png" alt="Play Store" />
+                                            <img src="../assets/images/others/play-store.png" alt="Play Store" />
                                         </p>
                                     </div>
                                 </div>
@@ -109,9 +109,9 @@ const Footer = () => {
                         <div className="copyright-right d-flex flex-wrap justify-content-xl-end justify-content-center align-items-center">
                             <span className="card-text">Accept For</span>
                             <ul className="payment-icons-bottom quick-link">
-                                <li><img src="assets/images/icons/cart/cart-1.png" alt="paypal cart" /></li>
-                                <li><img src="assets/images/icons/cart/cart-2.png" alt="paypal cart" /></li>
-                                <li><img src="assets/images/icons/cart/cart-5.png" alt="paypal cart" /></li>
+                                <li><img src="../assets/images/icons/cart/cart-1.png" alt="paypal cart" /></li>
+                                <li><img src="../assets/images/icons/cart/cart-2.png" alt="paypal cart" /></li>
+                                <li><img src="../assets/images/icons/cart/cart-5.png" alt="paypal cart" /></li>
                             </ul>
                         </div>
                     </div>
@@ -123,4 +123,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default FooterSingle

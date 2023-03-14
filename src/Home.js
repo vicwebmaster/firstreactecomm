@@ -41,11 +41,11 @@ const Home = () => {
                         <div className="col-lg-3" key={item.id}>
                             <div className="slider-product-box">
                                 <div className="product-thumb">
-                                    <Link to="/singleProduct">
+                                    <Link to={`/singleProduct/${item.id}`}>
                                         <img src={item.image} alt="Product" />
                                     </Link>
                                 </div>
-                                <h6 className="title"><Link to={`/singleProduct${item.id}`}>{item.title}</Link></h6>
+                                <h6 className="title"><Link to={`/singleProduct/${item.id}`}>{item.title}</Link></h6>
                                 <span className="price">${item.price}.99</span>
                             </div>
                         </div>

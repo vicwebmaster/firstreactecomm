@@ -6,6 +6,8 @@ const DataContext = createContext({});
 export const DataProvider = ({children}) => {
     const [cartItem, setCartItem] = useState([]);
     const [products, setProducts] = useState([]);
+    const [cat, setCat] = useState([]);
+    const [subCat, setSubCat] = useState([]);
     const [users, setUsers] = useState([]);
     const [logged, setLogged] = useState([]);
 
@@ -90,6 +92,62 @@ export const DataProvider = ({children}) => {
             setProducts(siteData.items.reverse());
           }
 
+          const category = {
+            "category": [
+              {
+                "id": 1,
+                "name":"Vegetables",
+              },
+              {
+                "id": 2,
+                "name":"Clothes",
+              },{
+                "id": 3,
+                "name":"Wine",
+              }
+            ]
+          };
+          if (localStorage.getItem("category") === null) {
+            localStorage.setItem('category', JSON.stringify(category));
+            setCat(category);
+          } else {
+            let siteCat = JSON.parse(localStorage.getItem("category"));
+            setCat(siteCat.category.reverse());
+          }
+
+          
+          const subcategory = {
+            "subcategory": [
+              {
+                "id": 1,
+                "catid":1,
+                "name":"Carrot",
+              },{
+                "id": 2,
+                "catid":1,
+                "name":"Cucumber",
+              },{
+                "id": 3,
+                "catid":2,
+                "name":"Suit",
+              },{
+                "id": 4,
+                "catid":2,
+                "name":"Trousers",
+              },{
+                "id": 5,
+                "catid":2,
+                "name":"Wrapper",
+              }
+            ]
+          };
+          if (localStorage.getItem("subcategory") === null) {
+            localStorage.setItem('subcategory', JSON.stringify(subcategory));
+            setSubCat(subcategory);
+          } else {
+            let siteSubCat = JSON.parse(localStorage.getItem("subcategory"));
+            setSubCat(siteSubCat.subcategory.reverse());
+          }
 
 
         const cart = ([
@@ -202,7 +260,8 @@ export const DataProvider = ({children}) => {
     return (
         <DataContext.Provider value={{
             cartItem, setCartItem, showMessage, addToCart, products, setProducts, regSuccessMessage, loginFailedMessage,
-            clearCartMessage, deleteItemMessage, setUsers, users, logged, setLogged, checkLogged
+            clearCartMessage, deleteItemMessage, setUsers, users, logged, setLogged, checkLogged, cat, setCat, setSubCat,
+            subCat
         }}>
             {children}
         </DataContext.Provider>

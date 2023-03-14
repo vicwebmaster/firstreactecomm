@@ -5,14 +5,13 @@ import DataContext from '../context/DataContext'
 
 const Cart = () => {
     const navigate = useNavigate()
-    const {clearCartMessage} = useContext(DataContext);
+    const {clearCartMessage, cartItem, products} = useContext(DataContext);
     const clearCart = () => {
         localStorage.removeItem('cart');
         clearCartMessage()
         navigate("/cart")
         window.location.reload();
     }
-
   return (
     <main className="main-wrapper">
 
@@ -52,6 +51,9 @@ const Cart = () => {
                                             <tr className="order-subtotal">
                                                 <td>Subtotal</td>
                                                 <td>$117.00</td>
+                                                {/* <td>{cartItem && cartItem.map((cartproduct)=>(
+                                                    (products.filter((x)=>{return x.id===cartproduct.productid}).reduce((a,v) =>  a = a + v.price , 0 ))
+                                                ))}</td> */}
                                             </tr>
                                             <tr className="order-shipping">
                                                 <td>Shipping</td>

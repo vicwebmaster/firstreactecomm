@@ -1,6 +1,7 @@
 import React from 'react';
 import PagesItem from './PagesItem'
 import HeaderAction from './HeaderAction'
+import HeaderCat from './HeaderCat'
 import {Link} from 'react-router-dom';
 
 
@@ -78,40 +79,8 @@ const HeaderII = () => {
                             <nav className="department-nav-menu">
                                 <button className="sidebar-close"><i className="fas fa-times"></i></button>
                                 <ul className="nav-menu-list">
-                                    <li>
-                                        <Link className="nav-link has-megamenu">
-                                            <span className="menu-icon"><img src="assets/images/product/categories/cat-01.png" alt="Department" /></span>
-                                            <span className="menu-text">Fashion</span>
-                                        </Link>
-                                        <div className="department-megamenu">
-                                            <div className="department-megamenu-wrap ">
-                                                <div className="department-submenu">
-                                                    <h3 className="submenu-heading">Fashion</h3>
-                                                    <ul>
-                                                        <li><Link><Link to="/shop">T-shirts</Link></Link></li>
-                                                        <li><Link to="/shop">Shirts</Link></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <Link className="nav-link has-megamenu">
-                                            <span className="menu-icon"><img src="assets/images/product/categories/cat-02.png" alt="Department" /></span>
-                                            <span className="menu-text">Electronics</span>
-                                        </Link>
-                                        <div className="department-megamenu">
-                                            <div className="department-megamenu-wrap ">
-                                                <div className="department-submenu">
-                                                    <h3 className="submenu-heading">Electronics</h3>
-                                                    <ul>
-                                                        <li><Link><Link to="/shop">Iron</Link></Link></li>
-                                                        <li><Link to="/shop">Kettle</Link></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+
+                                    <HeaderCat />
                                     
 
                                 </ul>

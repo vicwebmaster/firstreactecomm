@@ -5,7 +5,7 @@ import DataContext from '../context/DataContext'
 
 const Cart = () => {
     const navigate = useNavigate()
-    const {clearCartMessage, cartItem, products} = useContext(DataContext);
+    const {clearCartMessage} = useContext(DataContext);
     const clearCart = () => {
         localStorage.removeItem('cart');
         clearCartMessage()

@@ -89,7 +89,7 @@ export const DataProvider = ({children}) => {
           } else {
             localStorage.setItem('items', JSON.stringify(items));
             let siteData = JSON.parse(localStorage.getItem("items"));
-            setProducts(siteData.items.reverse());
+            setProducts(siteData.items);
           }
 
           const category = {

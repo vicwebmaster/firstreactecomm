@@ -20,7 +20,7 @@ const NewArrival = ({products, showProductModal, setShowProductModal, setModalDa
         setShowProductModal={setShowProductModal}
         modalData={modalData}
     />
-    {products.slice(0, 4).map((item)=>(
+    {products.slice(0, 4).reverse().map((item)=>(
     <div className="col-xl-3 col-lg-4 col-sm-6 col-12 mb--30" key={item.id}>
         <div className="axil-product product-style-one">
             <div className="thumbnail">
